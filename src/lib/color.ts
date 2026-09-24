@@ -17,7 +17,7 @@ export function hslToHex(hsl: HSL): string {
 export function hexToHsl(hex: string): HSL | null {
   const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
   if (!m) return null;
-  const int = parseInt(m[1], 16);
+  const int = parseInt(m[1] as string, 16);
   const r = ((int >> 16) & 255) / 255;
   const g = ((int >> 8) & 255) / 255;
   const b = (int & 255) / 255;
